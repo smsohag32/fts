@@ -102,16 +102,14 @@ const Login = ({ mode }: { mode: Mode }) => {
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-   
-
-   
+    router.push('/dashboards/crm')
   }
 
   return (
     <div className='flex bs-full justify-center'>
       <div
         className={classnames(
-          'flex bs-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
+          'flex bs-full items-center justify-center flex-1 min-bs-[100vh] relative p-6 max-md:hidden',
           {
             'border-ie': settings.skin === 'bordered'
           }
@@ -127,9 +125,6 @@ const Login = ({ mode }: { mode: Mode }) => {
         <img src={authBackground} className='absolute bottom-[4%] z-[-1] is-full max-md:hidden' />
       </div>
       <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
-        <div className='absolute block-start-5 sm:block-start-[38px] inline-start-6 sm:inline-start-[38px]'>
-          <Logo component />
-        </div>
         <div className='flex flex-col gap-5 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset]'>
           <div>
             <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
